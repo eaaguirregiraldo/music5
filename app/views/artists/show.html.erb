@@ -1,8 +1,8 @@
 <div class="container"> 
   <div class="row">  
-   <h1>A L B U M S</h1>	      	 
-         <h1><%= @artists["name"] %></h1>
-         <img src=<%= @artists["image_url"] %> alt="...">
+  	<h3>Albums (<%= @artists.albums.count %>)</h3>
+    <h1><%= @artists["name"] %></h1>
+    <img src=<%= @artists["image_url"] %> alt="...">
        
   	   <% @albums.each do |album|	%>
 	  		<div class="col-sm-6 col-md-4">  		   
