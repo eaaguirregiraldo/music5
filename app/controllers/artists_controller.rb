@@ -3,8 +3,8 @@ class ArtistsController < ApplicationController
     @artists = Artist.all  	
   end
   def show
-  	@albums   = Album.where("artists_id = ?", params[:id])  	
+  	@albums   = Album.where("artist_id = ?", params[:id])  	
   	@artists  = Artist.find(params[:id])
-  	@cant_albums = Album.select("count(*) as cant_albums").where("artists_id = ?", params[:id])  	  	
+  	#@cant_albums = Album.select("count(*) as cant_albums").where("artists_id = ?", params[:id])  	  	
   end
 end
