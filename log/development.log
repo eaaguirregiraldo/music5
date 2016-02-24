@@ -1482,3 +1482,20 @@ Migrating to ChangeNames (20160224205953)
             FROM sqlite_temp_master
             WHERE name='index_songs_on_album_id' AND type='index'
 [0m
+
+
+Started GET "/artists" for ::1 at 2016-02-24 16:31:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 797ms (Views: 766.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/artists/1" for ::1 at 2016-02-24 16:31:46 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAlbum Load (0.0ms)[0m  SELECT "albums".* FROM "albums" WHERE (artist_id = '1')
+  Rendered artists/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 313ms (Views: 156.0ms | ActiveRecord: 1.0ms)
